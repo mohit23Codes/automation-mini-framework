@@ -1,0 +1,38 @@
+package tests;
+
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pages.GoogleHomePage;
+import pages.GoogleResultsPage;
+
+public class GoogleSearchSDETTest extends BaseTest{
+	
+	private static final Logger log = LogManager.getLogger(GoogleSearchSDETTest.class);
+	
+	@Test
+	public void searchSdet() {
+
+		log.info("Thread: {} - Running searchsearchSdet", Thread.currentThread().getName());
+
+		GoogleHomePage googleHomePage = new GoogleHomePage();
+		GoogleResultsPage googleResultsPage = googleHomePage.searchTopic("SDET");
+
+		int count = googleResultsPage.getResultCount();
+
+		log.info("Found {} results for SDET", count); // Log number of results
+
+		Assert.assertTrue(count > 0, // Condition: expect at least one result
+				"Expected at least one result for SDET");
+
+	}
+
+
+}
+
