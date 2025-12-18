@@ -50,7 +50,7 @@ public class DriverFactory {
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ConfigManager.getLong("page.load.timeout")));
 			
 			driverThreadLocal.set(driver);
-
+ 
 		}
 	}
 	

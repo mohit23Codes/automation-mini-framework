@@ -44,6 +44,11 @@ public class RetryAnalyzer implements IRetryAnalyzer { // Class implementing ret
                     currentRetry, // Current attempt number
                     maxRetryCount, // Max attempts
                     Thread.currentThread().getName()); // Current thread name
+            System.out.println(
+            	    "RETRYING: " + result.getName() +
+            	    " | Attempt " + currentRetry +
+            	    " | Thread " + Thread.currentThread().getName()
+            	);
             return true; // Tell TestNG to rerun this test
         }
 

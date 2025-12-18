@@ -87,6 +87,9 @@
                     <systemPropertyVariables>
                         <!-- Default env can be overridden with -Denv=qa etc -->
                         <env>local</env>
+                        <allure.results.directory>
+                            ${project.build.directory}/allure-results
+                        </allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
