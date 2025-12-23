@@ -25,17 +25,14 @@ pipeline {
 		)
 	}
 
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
+	 stage('Build & Test') {
+      	steps {
+                bat """
+                mvn clean test ^
+                -Dsuite=${params.SUITE} ^
+                -Denv=${params.ENV} ^
+                -Dheadless=${params.HEADLESS}
+                """
             }
-        }
-
-        stage('Build & Test') {
-            steps {
-                bat 'mvn clean test'
-            }
-        }
-    }
+     }
 }
