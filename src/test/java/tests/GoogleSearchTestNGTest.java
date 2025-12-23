@@ -17,7 +17,7 @@ public class GoogleSearchTestNGTest extends BaseTest{
 	private static final Logger log = LogManager.getLogger(GoogleSearchTestNGTest.class);
 	
 	
-	@Test
+	@Test(groups = {"regression", "ui"})
 	public void searchTestNgTest() {
 
 		log.info("Thread: {} - Running searchSearchTestNgTest", Thread.currentThread().getName());

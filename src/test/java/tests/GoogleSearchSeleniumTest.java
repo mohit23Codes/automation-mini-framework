@@ -12,11 +12,11 @@ import org.testng.annotations.Test;
 import pages.GoogleHomePage;
 import pages.GoogleResultsPage;
 
-public class GoogleSearchSeleniumTest extends BaseTest {
+public class GoogleSearchSeleniumTest extends BaseTest{
 
 	private static final Logger log = LogManager.getLogger(GoogleSearchSeleniumTest.class);
 
-	@Test
+	@Test(groups = {"regression", "ui"})
 	public void searchSeleniumWebDriver() {
 
 		log.info("Thread: {} - Running searchSeleniumWebDriver", Thread.currentThread().getName());

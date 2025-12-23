@@ -16,7 +16,7 @@ public class GoogleSearchSDETTest extends BaseTest{
 	
 	private static final Logger log = LogManager.getLogger(GoogleSearchSDETTest.class);
 	
-	@Test
+	@Test(groups = {"regression", "ui"})
 	public void searchSdet() {
 
 		log.info("Thread: {} - Running searchsearchSdet", Thread.currentThread().getName());
@@ -28,7 +28,7 @@ public class GoogleSearchSDETTest extends BaseTest{
 
 		log.info("Found {} results for SDET", count); // Log number of results
 
-		Assert.assertTrue(count < 0, // Condition: expect at least one result
+		Assert.assertTrue(count > 0, // Condition: expect at least one result
 				"Expected at least one result for SDET");
 
 	}

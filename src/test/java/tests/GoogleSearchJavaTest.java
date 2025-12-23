@@ -12,12 +12,12 @@ import org.testng.annotations.Test;
 import pages.GoogleHomePage;
 import pages.GoogleResultsPage;
 
-public class GoogleSearchJavaTest extends BaseTest {
+public class GoogleSearchJavaTest extends BaseTest{
 	
 	
 	private static final Logger log = LogManager.getLogger(GoogleSearchJavaTest.class);
 	
-	@Test
+	@Test(groups = {"ui", "smoke"})
 	public void searchJava() {
 
 		log.info("Thread: {} - Running searchsearchJava", Thread.currentThread().getName());

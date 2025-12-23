@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import pages.GoogleHomePage;
 import pages.GoogleResultsPage;
 
-public class GoolgeSearchRandomTest extends BaseTest {
+public class GoolgeSearchRandomTest extends BaseTest{
 	
 	private static final Logger log = LogManager.getLogger(GoolgeSearchRandomTest.class);
 	
