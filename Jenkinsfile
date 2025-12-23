@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     parameters {
+        string(
+            name: 'BRANCH',
+            defaultValue: 'main',
+            description: 'Git branch to build'
+        )
+
         choice(
             name: 'SUITE',
             choices: ['ui', 'smoke', 'regression'],
@@ -21,15 +27,20 @@ pipeline {
         )
     }
 
+    triggers {
+        cron('H 2 * * *')
+    }
+
     stages {
 
-        stage('Checkout SCM') {
+        stage('Checkout Source Code') {
             steps {
-                checkout scm
+                git branch: params.BRANCH,
+                    url: 'https://github.com/mohit23Codes/automation-mini-framework.git'
             }
         }
 
-        stage('Build & Test') {
+        stage('Build & Run Tests') {
             steps {
                 bat """
                 mvn clean test ^
@@ -38,6 +49,15 @@ pipeline {
                 -Dheadless=${params.HEADLESS}
                 """
             }
+        }
+    }
+
+    post {
+        always {
+            allure([
+                includeProperties: false,
+                results: [[path: 'target/allure-results']]
+            ])
         }
     }
 }
