@@ -65,7 +65,12 @@ public class ConfigManager {
 	
 	public static boolean getBool(String key) {
 		
-		return Boolean.parseBoolean(prop.getProperty(key));
+	    String sysValue = System.getProperty(key);
+	    if (sysValue != null) {
+	        return Boolean.parseBoolean(sysValue);
+	    }
+
+	    return Boolean.parseBoolean(prop.getProperty(key));
 	}
 
 }
