@@ -6,13 +6,13 @@
 
 	<!-- Register listeners -->
 	<listeners>
+	    <!-- Allure listener to integrate Allure with TestNG -->
+		<listener class-name="io.qameta.allure.testng.AllureTestNg" />
 		<!-- Attach RetryListener to apply RetryAnalyzer to all tests -->
 		<listener class-name="listeners.RetryListener" />
 		<!-- Attach TestListener for logging + screenshots on failure + Allure 
 			attachments -->
 		<listener class-name="listeners.TestListener" />
-		<!-- Allure listener to integrate Allure with TestNG -->
-		<listener class-name="io.qameta.allure.testng.AllureTestNg" />
 	</listeners>
 
 	<!-- Define a TestNG <test> block (logical test group) -->
