@@ -17,7 +17,7 @@ public class GoogleSearchJavaTest extends BaseTest{
 	
 	private static final Logger log = LogManager.getLogger(GoogleSearchJavaTest.class);
 	
-	@Test(groups = {"ui", "smoke"})
+	@Test(groups = {"smoke"})
 	public void searchJava() {
 
 		log.info("Thread: {} - Running searchsearchJava", Thread.currentThread().getName());
