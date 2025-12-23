@@ -81,7 +81,7 @@
                 <configuration>
                     <!-- Tell Surefire to use our TestNG suite file -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suite.file}</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!-- System properties (optional overrides) -->
                     <systemPropertyVariables>
