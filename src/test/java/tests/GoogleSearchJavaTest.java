@@ -17,7 +17,7 @@ public class GoogleSearchJavaTest extends BaseTest{
 	
 	private static final Logger log = LogManager.getLogger(GoogleSearchJavaTest.class);
 	
-	@Test(groups = {"smoke"})
+	@Test(groups = {"ui", "smoke"})
 	public void searchJava() {
 
 		log.info("Thread: {} - Running searchsearchJava", Thread.currentThread().getName());
@@ -29,7 +29,7 @@ public class GoogleSearchJavaTest extends BaseTest{
 
 		log.info("Found {} results for JAVA", count); // Log number of results
 
-		Assert.assertTrue(count > 0, // Condition: expect at least one result
+		Assert.assertTrue(count < 0, // Condition: expect at least one result
 				"Expected at least one result for Java");
 	}
 

@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    options {
+        skipDefaultCheckout(true)
+    }
 
     parameters {
         string(
