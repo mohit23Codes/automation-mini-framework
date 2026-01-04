@@ -28,8 +28,6 @@ public class DriverFactory {
 				WebDriverManager.chromedriver().setup();
 
 				ChromeOptions options = new ChromeOptions();
-				
-				System.out.println(">>> headless flag = " + ConfigManager.getBool("headless"));
 
 				if (ConfigManager.getBool("headless")) {
 

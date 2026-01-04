@@ -11,7 +11,7 @@ pipeline {
             defaultValue: 'main',
             description: 'Git branch to build'
         )
-
+  
         choice(
             name: 'SUITE',
             choices: ['ui', 'smoke', 'regression'],

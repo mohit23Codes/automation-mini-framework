@@ -11,17 +11,10 @@ public class ConfigManager {
 	static {
 		
 		System.out.println("Classpath root = " +
-			    ConfigManager.class.getClassLoader().getResource(""));
-		
-		System.out.println(">>> ENTERING ConfigManager static block");
-		
-		
+			    ConfigManager.class.getClassLoader().getResource(""));		
 		
 		String env = System.getProperty("env", "local"); //hardcoding system property of env to Local if not provided, system property is 
 		                                                 //provided via Maven command or in Jenkins, this is not read from config files
-		
-		
-		System.out.println(">>> env = " + env);
 		
 		String fileName = String.format("config-%s.properties", env);
 		
@@ -49,7 +42,7 @@ public class ConfigManager {
 	public static String get(String key) {
 		
 		String value = prop.getProperty(key);
-		System.out.println(">>> ConfigManager.get('" + key + "') = " + value);
+		
 		return value;
 	}
 	
